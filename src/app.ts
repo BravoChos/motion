@@ -16,17 +16,17 @@ class App {
     );
     this.page.addChild(image);
 
-    const note = new NoteComponent("Note Title", "Note Body");
-    this.page.addChild(note);
-
-    const todo = new TodoComponent("Todo Title", "Todo Item");
-    this.page.addChild(todo);
-
     const video = new VideoComponent(
       "Video Title",
       "https://youtu.be/K3-jG52XwuQ"
     );
     this.page.addChild(video);
+
+    const note = new NoteComponent("Note Title", "Note Body");
+    this.page.addChild(note);
+
+    const todo = new TodoComponent("Todo Title", "Todo Item");
+    this.page.addChild(todo);
   }
 }
 
