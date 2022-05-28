@@ -8,6 +8,7 @@ import {
   PageItemComponent,
 } from "./components/page/page.js";
 import { Component } from "./components/component.js";
+import { InputDialog } from "./components/dialog/dialog.js";
 class App {
   private readonly page: Component & Composable;
   constructor(appRoot: HTMLElement) {
@@ -19,6 +20,21 @@ class App {
       "https://picsum.photos/600/300"
     );
     this.page.addChild(image);
+
+    const imageBtn = document.querySelector("#new-image")! as HTMLButtonElement;
+    imageBtn.addEventListener("click", () => {
+      const dialog = new InputDialog();
+
+      dialog.setOnCloseListenr(() => {
+        dialog.removeFrom(document.body);
+      });
+      dialog.setOnSubmitListenr(() => {
+        // 섹션을 만들어서 페이지에 추가 해준다
+        dialog.removeFrom(document.body);
+      });
+
+      dialog.attachTo(document.body);
+    });
 
     const video = new VideoComponent(
       "Video Title",
