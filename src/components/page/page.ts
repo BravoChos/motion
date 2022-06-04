@@ -29,6 +29,18 @@ export class PageItemComponent
     closeBtn.onclick = () => {
       this.closeListener && this.closeListener();
     };
+    this.element.addEventListener("dragstart", (event: DragEvent) => {
+      this.onDragStart(event);
+    });
+    this.element.addEventListener("dragend", (event: DragEvent) => {
+      this.onDragEnd(event);
+    });
+  }
+  onDragStart(event: DragEvent) {
+    console.log("dragstart", event);
+  }
+  onDragEnd(event: DragEvent) {
+    console.log("dragend", event);
   }
   addChild(child: Component) {
     const container = this.element.querySelector(
@@ -46,6 +58,21 @@ export class PageComponent
 {
   constructor(private pageItemConstructor: SectionContainerConstructor) {
     super('<ul class="page"></ul>');
+    this.element.addEventListener("dragover", (event: DragEvent) => {
+      this.onDragOver(event);
+    });
+    this.element.addEventListener("drop", (event: DragEvent) => {
+      this.onDrop(event);
+    });
+  }
+
+  onDragOver(event: DragEvent) {
+    event.preventDefault();
+    console.log("onDragOver");
+  }
+  onDrop(event: DragEvent) {
+    event.preventDefault();
+    console.log("onDrop");
   }
 
   addChild(section: Component) {
