@@ -56,7 +56,7 @@ class App {
       new VideoComponent("Video Title", "https://youtu.be/D7cwvvA7cP0")
     );
     this.page.addChild(
-      new NoteComponent("Note Title", "Don't forget to code your dream")
+      new NoteComponent("Note Title", "You are my dancing Queen")
     );
     this.page.addChild(new TodoComponent("Todo Title", "TypeScript Course!"));
     this.page.addChild(
@@ -66,7 +66,7 @@ class App {
       new VideoComponent("Video Title", "https://youtu.be/D7cwvvA7cP0")
     );
     this.page.addChild(
-      new NoteComponent("Note Title", "Don't forget to code your dream")
+      new NoteComponent("Note Title", "Typescript is awesome!")
     );
     this.page.addChild(new TodoComponent("Todo Title", "TypeScript Course!"));
   }
